@@ -1,48 +1,46 @@
-#ifndef VInstance_h
-#define VInstance_h
+#ifndef EAVULKAN_INSTANCE_HPP
+#define EAVULKAN_INSTANCE_HPP
 
-#include "common/common.hpp"
+#include <eavulkan/common/includes.hpp>
 
-namespace VGraphicsEngine
-{
+namespace rendering {
 
-    class VInstance
-    {
-        VkInstance _instance{ nullptr };
-        VkDebugUtilsMessengerEXT _debugMessenger{ nullptr };
+class Instance {
+  VkInstance _instance{nullptr};
+  VkDebugUtilsMessengerEXT _debugMessenger{nullptr};
 
-        bool _isValidationEnabled{ false };
-        std::vector<const char*> _enabledLayerNames;
-        std::vector<const char*> _enabledExtensionNames;
+  bool _isValidationEnabled{false};
+  std::vector<const char*> _enabledLayerNames;
+  std::vector<const char*> _enabledExtensionNames;
 
-        PFN_vkCreateDebugUtilsMessengerEXT createDebugUtilsMessengerExt{ nullptr };
-        PFN_vkDestroyDebugUtilsMessengerEXT destroyDebugUtilsMessengerExt{ nullptr };
+  PFN_vkCreateDebugUtilsMessengerEXT _createDebugUtilsMessengerExt{nullptr};
+  PFN_vkDestroyDebugUtilsMessengerEXT _destroyDebugUtilsMessengerExt{nullptr};
 
-        std::vector<VkLayerProperties> _instanceLayerProperties;
-        std::vector<VkExtensionProperties> _instanceExtensionProperties;
-        VkDebugUtilsMessengerCreateInfoEXT _debugMessengerCreateInfo;
-        VkApplicationInfo _applicationInfo;
+  std::vector<VkLayerProperties> _instanceLayerProperties;
+  std::vector<VkExtensionProperties> _instanceExtensionProperties;
+  VkDebugUtilsMessengerCreateInfoEXT _debugMessengerCreateInfo;
+  VkApplicationInfo _applicationInfo;
 
-        void initInstanceLayerProperties();
-        void initInstanceExtensionProperties();
-        void initDebugUtilsMessengerFunctionPointers();
+  void initInstanceLayerProperties();
+  void initInstanceExtensionProperties();
+  void initDebugUtilsMessengerFunctionPointers();
 
-        void enableInstanceLayers();
-        void enableInstanceExtension( const char* extensionName );
+  void enableInstanceLayers();
+  void enableInstanceExtension(const char* extension_name);
 
-    public:
-        explicit VInstance( std::vector<const char*> sdlExtensionNames, VkApplicationInfo applicationInfo,
-                            bool enableValidationLayers = false );
+ public:
+  explicit Instance(std::vector<const char*> sdl_extension_names, VkApplicationInfo application_info,
+                    bool enable_validation_layers = false);
 
-        ~VInstance();
-        VInstance( const VInstance& ) = delete;
-        VInstance( const VInstance&& ) = delete;
-        VInstance& operator=( const VInstance& ) = delete;
-        VInstance& operator=( const VInstance&& ) = delete;
+  ~Instance();
+  Instance(const Instance&) = delete;
+  Instance(const Instance&&) = delete;
+  auto operator=(const Instance&) -> Instance& = delete;
+  auto operator=(const Instance&&) -> Instance& = delete;
 
-        [[nodiscard]] VkInstance getHandle() const;
-    };
+  [[nodiscard]] auto GetHandle() const -> VkInstance;
+};
 
-}  // namespace VGraphicsEngine
+}  // namespace rendering
 
-#endif  // VInstance_h
+#endif

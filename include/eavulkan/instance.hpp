@@ -21,12 +21,12 @@ class Instance {
   VkDebugUtilsMessengerCreateInfoEXT _debugMessengerCreateInfo;
   VkApplicationInfo _applicationInfo;
 
-  void initInstanceLayerProperties();
-  void initInstanceExtensionProperties();
-  void initDebugUtilsMessengerFunctionPointers();
+  auto initInstanceLayerProperties() -> void;
+  auto initInstanceExtensionProperties() -> void;
+  auto initDebugUtilsMessengerFunctionPointers() -> void;
 
-  void enableInstanceLayers();
-  void enableInstanceExtension(const char* extension_name);
+  auto enableInstanceLayers() -> void;
+  auto enableInstanceExtension(const char* extension_name) -> void;
 
  public:
   explicit Instance(std::vector<const char*> sdl_extension_names, VkApplicationInfo application_info,

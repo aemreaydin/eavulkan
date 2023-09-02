@@ -1,4 +1,4 @@
-file(GLOB HEADER_LIST CONFIGURE_DEPENDS
+file(GLOB_RECURSE HEADER_LIST CONFIGURE_DEPENDS
         "${CMAKE_SOURCE_DIR}/include/eavulkan/*.hpp")
 
 set(THIRD_PARTY_INCLUDES
@@ -14,9 +14,9 @@ set(THIRD_PARTY_LIBS
 
 add_library(${CMAKE_PROJECT_NAME}
         instance.cpp
+        physical_device.cpp
         ${HEADER_LIST}
 )
-#        VPhysicalDevice.cpp
 #        VDevice.cpp
 #        VQueue.cpp
 #        VRenderPass.cpp

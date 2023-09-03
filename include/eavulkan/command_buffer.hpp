@@ -9,14 +9,14 @@ class VCommandPool;
 class CommandBuffer : public DeviceResource<VkCommandBuffer> {
   enum class State { INITIAL, RECORDING, EXECUTABLE, PENDING, INVALID };
 
-  const VCommandPool* _commandPool{nullptr};
-  bool _isPrimary{false};
-  State _state{State::INVALID};
+  const VCommandPool* _commandPool{ nullptr };
+  bool _isPrimary{ false };
+  State _state{ State::INVALID };
 
  public:
-  explicit CommandBuffer(const VCommandPool& command_pool, VkCommandBufferLevel level);
+  explicit CommandBuffer( const VCommandPool& command_pool, VkCommandBufferLevel level );
 
-  auto SetState(State state) -> void;
+  auto SetState( State state ) -> void;
 
   [[nodiscard]] auto IsRecording() const -> bool;
   [[nodiscard]] auto IsPending() const -> bool;

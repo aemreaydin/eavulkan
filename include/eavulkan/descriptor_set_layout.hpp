@@ -10,7 +10,7 @@ class DescriptorSetLayout : public DeviceResource<VkDescriptorSetLayout> {
   std::vector<VkDescriptorSetLayoutBinding> _bindings;
 
  public:
-  DescriptorSetLayout(const Device& device, std::vector<VkDescriptorSetLayoutBinding> bindings);
+  DescriptorSetLayout( const Device& device, std::vector<VkDescriptorSetLayoutBinding> bindings );
   auto Cleanup() -> void override;
 };
 

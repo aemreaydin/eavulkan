@@ -8,17 +8,17 @@ class Device;
 template <typename VulkanObject>
 class DeviceResource {
   VulkanObject _resource{};
-  const class Device *_pDevice{nullptr};
+  const class Device *_pDevice{ nullptr };
 
  public:
-  explicit DeviceResource(const Device &device) : _pDevice(&device) {}
-  DeviceResource(const Device &device, VulkanObject resource) : _pDevice(&device), _resource(resource) {}
+  explicit DeviceResource( const Device &device ) : _pDevice( &device ) {}
+  DeviceResource( const Device &device, VulkanObject resource ) : _pDevice( &device ), _resource( resource ) {}
 
   virtual ~DeviceResource() = default;
-  DeviceResource(const DeviceResource &) = default;
-  auto operator=(const DeviceResource &) -> DeviceResource & = default;
-  DeviceResource(DeviceResource &&) noexcept = default;
-  auto operator=(DeviceResource &&) noexcept -> DeviceResource & = default;
+  DeviceResource( const DeviceResource & ) = default;
+  auto operator=( const DeviceResource & ) -> DeviceResource & = default;
+  DeviceResource( DeviceResource && ) noexcept = default;
+  auto operator=( DeviceResource && ) noexcept -> DeviceResource & = default;
 
   [[nodiscard]] auto GetDevice() const -> const Device & { return *_pDevice; }
 

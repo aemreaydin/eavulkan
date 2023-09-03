@@ -11,9 +11,9 @@ class RenderPass : public DeviceResource<VkRenderPass> {
   std::vector<VkSubpassDependency> _subpassDependencies{};
 
  public:
-  RenderPass(const Device& device, std::vector<VkAttachmentDescription> attachment_descriptions,
-             std::vector<VkSubpassDescription> subpass_descriptions,
-             std::vector<VkSubpassDependency> subpass_dependencies);
+  RenderPass( const Device& device, std::vector<VkAttachmentDescription> attachment_descriptions,
+              std::vector<VkSubpassDescription> subpass_descriptions,
+              std::vector<VkSubpassDependency> subpass_dependencies );
 
   [[nodiscard]] auto GetAttachmentDescriptions() const -> const std::vector<VkAttachmentDescription>&;
 

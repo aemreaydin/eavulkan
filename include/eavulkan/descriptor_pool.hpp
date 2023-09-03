@@ -12,8 +12,8 @@ class DescriptorPool : public DeviceResource<VkDescriptorPool> {
   uint32_t _maxSets;
 
  public:
-  DescriptorPool(const Device& device, std::vector<VkDescriptorPoolSize> pool_sizes,
-                 uint32_t max_sets = kMaxDescriptorSets);
+  DescriptorPool( const Device& device, std::vector<VkDescriptorPoolSize> pool_sizes,
+                  uint32_t max_sets = kMaxDescriptorSets );
   auto Cleanup() -> void override;
 };
 

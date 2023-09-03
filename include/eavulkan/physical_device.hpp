@@ -10,18 +10,18 @@ struct PhysicalDeviceProperties {
   std::vector<VkQueueFamilyProperties> queueFamilyProperties{};
   VkPhysicalDeviceMemoryProperties memoryProperties{};
 
-  explicit PhysicalDeviceProperties(VkPhysicalDevice physical_device);
+  explicit PhysicalDeviceProperties( VkPhysicalDevice physical_device );
 };
 
 class Instance;
 class PhysicalDevice {
-  VkPhysicalDevice _physicalDevice{nullptr};
+  VkPhysicalDevice _physicalDevice{ nullptr };
   PhysicalDeviceProperties _physicalDeviceProperties;
 
-  static auto FindSuitablePhysicalDevice(VkInstance instance, VkSurfaceKHR surface) -> VkPhysicalDevice;
+  static auto FindSuitablePhysicalDevice( VkInstance instance, VkSurfaceKHR surface ) -> VkPhysicalDevice;
 
  public:
-  explicit PhysicalDevice(VkInstance instance, VkSurfaceKHR surface);
+  explicit PhysicalDevice( VkInstance instance, VkSurfaceKHR surface );
 
   [[nodiscard]] auto GetHandle() const -> VkPhysicalDevice;
   [[nodiscard]] auto GetPhysicalDeviceProperties() const -> const PhysicalDeviceProperties&;

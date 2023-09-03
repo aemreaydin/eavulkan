@@ -4,24 +4,24 @@
 
 namespace Rendering {
 
-DescriptorPool::DescriptorPool(const Device& device, std::vector<VkDescriptorPoolSize> pool_sizes, uint32_t max_sets)
-    : DeviceResource(device), _poolSizes(std::move(pool_sizes)), _maxSets(max_sets) {
+DescriptorPool::DescriptorPool( const Device& device, std::vector<VkDescriptorPoolSize> pool_sizes, uint32_t max_sets )
+  : DeviceResource( device ), _poolSizes( std::move( pool_sizes ) ), _maxSets( max_sets ) {
   VkDescriptorPoolCreateInfo descriptorPoolCreateInfo{
-      VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO,
-      nullptr,
-      0,
+    VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO,
+    nullptr,
+    0,
   };
   descriptorPoolCreateInfo.maxSets = _maxSets;
-  descriptorPoolCreateInfo.poolSizeCount = toU32(_poolSizes.size());
+  descriptorPoolCreateInfo.poolSizeCount = toU32( _poolSizes.size() );
   descriptorPoolCreateInfo.pPoolSizes = _poolSizes.data();
 
-  vkCheck(vkCreateDescriptorPool(device.GetHandle(), &descriptorPoolCreateInfo, nullptr, &GetHandle()),
-          "Failed to create descriptor pool.");
+  vkCheck( vkCreateDescriptorPool( device.GetHandle(), &descriptorPoolCreateInfo, nullptr, &GetHandle() ),
+           "Failed to create descriptor pool." );
 }
 
 void DescriptorPool::Cleanup() {
-  if (GetHandle() != nullptr) {
-    vkDestroyDescriptorPool(GetDevice().GetHandle(), GetHandle(), nullptr);
+  if ( GetHandle() != nullptr ) {
+    vkDestroyDescriptorPool( GetDevice().GetHandle(), GetHandle(), nullptr );
   }
 }
 

@@ -1,6 +1,7 @@
 Checks: >
   *, -altera*, -llvm*, -fuchsia*, -hicpp*, 
-  -cppcoreguidelines-pro-type-reinterpret-cast, -bugprone-easily-swappable-parameters
+  -bugprone-easily-swappable-parameters,
+  -cppcoreguidelines-pro-type-reinterpret-cast, 
 WarningsAsErrors: "*"
 CheckOptions:
   - { key: readability-identifier-naming.ClassCase,                       value: CamelCase }
@@ -24,9 +25,8 @@ CheckOptions:
   - { key: readability-identifier-naming.PrivateMemberCase,               value: camelBack }
   - { key: readability-identifier-naming.PrivateMemberPrefix,             value: _ }
   - { key: readability-identifier-naming.PrivateMethodCase,               value: camelBack }
-  - { key: readability-identifier-naming.ProtectedMemberSuffix,           value: _ }
   - { key: readability-identifier-naming.ProtectedMemberCase,             value: camelBack }
-  - { key: readability-identifier-naming.ProtectedMemberPrefix,           value: m }
+  - { key: readability-identifier-naming.ProtectedMemberPrefix,           value: _ }
   - { key: readability-identifier-naming.ProtectedMethodCase,             value: camelBack }
   - { key: readability-identifier-naming.PublicMethodCase,                value: CamelCase }
   - { key: readability-identifier-naming.StructCase,                      value: CamelCase }

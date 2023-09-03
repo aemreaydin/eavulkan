@@ -24,7 +24,7 @@ add_library(${CMAKE_PROJECT_NAME}
 #        VBuffer.cpp
 #        VImage.cpp
 #        VSwapchain.cpp
-#        VResource.cpp
+#       VDeviceResource.cpp
 #        VCommandBuffer.cpp
 #        VCommandPool.cpp
 #        VRenderPass.cpp

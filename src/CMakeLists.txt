@@ -18,10 +18,11 @@ add_library(${CMAKE_PROJECT_NAME}
         queue.cpp
         device.cpp
         render_pass.cpp
+        pipeline.cpp
         ${HEADER_LIST}
+        ../include/eavulkan/graphics_pipeline.hpp
+        graphics_pipeline.cpp
 )
-#        RenderPass.cpp
-#        VPipeline.cpp
 #        VBuffer.cpp
 #        VImage.cpp
 #        VSwapchain.cpp
@@ -29,7 +30,7 @@ add_library(${CMAKE_PROJECT_NAME}
 #        VCommandBuffer.cpp
 #        VCommandPool.cpp
 #        RenderPass.cpp
-#        VPipeline.cpp
+#        Pipeline.cpp
 #        VFramebuffer.cpp
 #        VDescriptorPool.cpp
 #        VDescriptorSetLayout.cpp

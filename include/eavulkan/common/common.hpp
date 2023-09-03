@@ -28,7 +28,7 @@ auto readShaderFile(const std::string& shader_path) -> std::vector<T> {
 
   std::vector<T> buffer(size);
 
-  if (!ifs.read(buffer.data(), TO_U32(buffer.size()))) {
+  if (!ifs.read(buffer.data(), toU32(buffer.size()))) {
     throw std::runtime_error(fmt::format("Failed to read shader file from {}", shader_path));
   }
 

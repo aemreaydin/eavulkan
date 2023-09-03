@@ -16,7 +16,7 @@ class Queue {
                  VkQueueFamilyProperties queue_family_properties);
 
  public:
-  [[nodiscard]] auto GetHandle() -> VkQueue;
+  [[nodiscard]] auto GetHandle() -> VkQueue&;
   [[nodiscard]] auto GetIndex() const -> uint32_t;
   [[nodiscard]] auto GetCount() const -> uint32_t;
 
@@ -28,13 +28,14 @@ class Queues {
   PhysicalDevice const* _pPhysicalDevice{nullptr};
   std::map<VkQueueFlagBits, Queue> _mapQueue;
 
-  void initQueues();
+  auto initQueues() -> void;
   [[nodiscard]] auto findQueueFamilyIndex(VkQueueFlagBits queue_flag) const -> Queue;
 
  public:
   explicit Queues(const PhysicalDevice& physical_device);
-  [[nodiscard]] auto GetQueue(VkQueueFlagBits queue_flag) -> const Queue&;
-  [[nodiscard]] auto GetQueues() -> const QueueMap&;
+  [[nodiscard]] auto GetQueue(VkQueueFlagBits queue_flag) -> Queue&;
+  [[nodiscard]] auto GetQueue(VkQueueFlagBits queue_flag) const -> const Queue&;
+  [[nodiscard]] auto GetQueues() -> QueueMap&;
 };
 
 }  // namespace Rendering

@@ -7,7 +7,7 @@ namespace Rendering {
 class Device;
 template <typename VulkanObject>
 class DeviceResource {
-  Resource<VulkanObject> _resource{};
+  VulkanObject _resource{};
   const class Device *_pDevice{nullptr};
 
  public:

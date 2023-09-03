@@ -17,9 +17,10 @@ add_library(${CMAKE_PROJECT_NAME}
         physical_device.cpp
         queue.cpp
         device.cpp
+        render_pass.cpp
         ${HEADER_LIST}
 )
-#        VRenderPass.cpp
+#        RenderPass.cpp
 #        VPipeline.cpp
 #        VBuffer.cpp
 #        VImage.cpp
@@ -27,7 +28,7 @@ add_library(${CMAKE_PROJECT_NAME}
 #       VDeviceResource.cpp
 #        VCommandBuffer.cpp
 #        VCommandPool.cpp
-#        VRenderPass.cpp
+#        RenderPass.cpp
 #        VPipeline.cpp
 #        VFramebuffer.cpp
 #        VDescriptorPool.cpp

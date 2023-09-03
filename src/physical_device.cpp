@@ -1,7 +1,7 @@
 #include <eavulkan/common/common.hpp>
 #include <eavulkan/physical_device.hpp>
 
-namespace rendering {
+namespace Rendering {
 
 PhysicalDeviceProperties::PhysicalDeviceProperties(VkPhysicalDevice physical_device) {
   vkGetPhysicalDeviceProperties(physical_device, &physicalDeviceProperties);
@@ -52,4 +52,4 @@ auto PhysicalDevice::GetPhysicalDeviceProperties() const -> const PhysicalDevice
   return _physicalDeviceProperties;
 }
 
-}  // namespace rendering
+}  // namespace Rendering

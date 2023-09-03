@@ -15,10 +15,10 @@ set(THIRD_PARTY_LIBS
 add_library(${CMAKE_PROJECT_NAME}
         instance.cpp
         physical_device.cpp
+        queue.cpp
+        device.cpp
         ${HEADER_LIST}
 )
-#        VDevice.cpp
-#        VQueue.cpp
 #        VRenderPass.cpp
 #        VPipeline.cpp
 #        VBuffer.cpp

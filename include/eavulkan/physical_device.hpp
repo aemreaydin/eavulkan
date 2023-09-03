@@ -1,9 +1,8 @@
-#ifndef V_PHYSICAL_DEVICE_H
-#define V_PHYSICAL_DEVICE_H
+#pragma once
 
 #include <eavulkan/common/includes.hpp>
 
-namespace rendering {
+namespace Rendering {
 
 struct PhysicalDeviceProperties {
   VkPhysicalDeviceProperties physicalDeviceProperties{};
@@ -28,6 +27,4 @@ class PhysicalDevice {
   [[nodiscard]] auto GetPhysicalDeviceProperties() const -> const PhysicalDeviceProperties&;
 };
 
-}  // namespace rendering
-
-#endif
+}  // namespace Rendering

@@ -1,9 +1,8 @@
-#ifndef EAVULKAN_INSTANCE_HPP
-#define EAVULKAN_INSTANCE_HPP
+#pragma once
 
 #include <eavulkan/common/includes.hpp>
 
-namespace rendering {
+namespace Rendering {
 
 class Instance {
   VkInstance _instance{nullptr};
@@ -41,6 +40,4 @@ class Instance {
   [[nodiscard]] auto GetHandle() const -> VkInstance;
 };
 
-}  // namespace rendering
-
-#endif
+}  // namespace Rendering

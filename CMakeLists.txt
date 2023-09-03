@@ -15,9 +15,3 @@ find_package(tinyobjloader CONFIG REQUIRED)
 find_package(Stb REQUIRED)
 
 add_subdirectory(src)
-
-IF (WIN32)
-    execute_process(WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/scripts COMMAND powershell -File move_assets.ps1)
-ELSE ()
-    execute_process(WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/scripts COMMAND bash move_assets.sh ${CMAKE_GENERATOR})
-ENDIF ()

@@ -26,13 +26,15 @@ add_library(${CMAKE_PROJECT_NAME}
         descriptor_set_layout.cpp
         command_buffer.cpp
         command_pool.cpp
+        frame_buffer.cpp
+        buffer.cpp
         ${HEADER_LIST}
 )
 #        VBuffer.cpp
 #        VImage.cpp
 #        CommandBuffer.cpp
 #        VCommandPool.cpp
-#        VFramebuffer.cpp
+#        Framebuffer.cpp
 #        DescriptorSetLayout.cpp
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${THIRD_PARTY_LIBS})
 target_include_directories(${CMAKE_PROJECT_NAME}

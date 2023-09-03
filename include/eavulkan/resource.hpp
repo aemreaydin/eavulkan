@@ -26,7 +26,7 @@ class DeviceResource {
 
   [[nodiscard]] auto GetHandle() const -> const VulkanObject & { return _resource; }
 
-  virtual auto Cleanup() -> void = 0;
+  virtual auto Cleanup() -> void{};
 };
 
 }  // namespace Rendering

@@ -28,6 +28,7 @@ add_library(${CMAKE_PROJECT_NAME}
         command_pool.cpp
         frame_buffer.cpp
         buffer.cpp
+        image.cpp
         ${HEADER_LIST}
 )
 #        VBuffer.cpp

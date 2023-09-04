@@ -1,6 +1,6 @@
-#include <eavulkan/buffer.hpp>
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/device.hpp>
+#include <eavulkan/rendering/buffer.hpp>
+#include <eavulkan/rendering/device.hpp>
 
 namespace Rendering {
 

@@ -1,7 +1,7 @@
-#include <eavulkan/command_buffer.hpp>
-#include <eavulkan/command_pool.hpp>
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/device.hpp>
+#include <eavulkan/rendering/command_buffer.hpp>
+#include <eavulkan/rendering/command_pool.hpp>
+#include <eavulkan/rendering/device.hpp>
 
 namespace Rendering {
 CommandBuffer::CommandBuffer( const VCommandPool& command_pool, VkCommandBufferLevel level )

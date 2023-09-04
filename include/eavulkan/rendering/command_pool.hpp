@@ -1,7 +1,7 @@
 #pragma once
 
 #include <eavulkan/common/includes.hpp>
-#include <eavulkan/resource.hpp>
+#include <eavulkan/rendering/resource.hpp>
 
 namespace Rendering {
 

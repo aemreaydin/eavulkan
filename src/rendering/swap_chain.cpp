@@ -1,7 +1,7 @@
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/device.hpp>
-#include <eavulkan/physical_device.hpp>
-#include <eavulkan/swap_chain.hpp>
+#include <eavulkan/rendering/device.hpp>
+#include <eavulkan/rendering/physical_device.hpp>
+#include <eavulkan/rendering/swap_chain.hpp>
 
 namespace Rendering {
 

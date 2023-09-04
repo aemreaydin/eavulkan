@@ -1,8 +1,8 @@
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/descriptor_pool.hpp>
-#include <eavulkan/descriptor_set.hpp>
-#include <eavulkan/descriptor_set_layout.hpp>
-#include <eavulkan/device.hpp>
+#include <eavulkan/rendering/descriptor_pool.hpp>
+#include <eavulkan/rendering/descriptor_set.hpp>
+#include <eavulkan/rendering/descriptor_set_layout.hpp>
+#include <eavulkan/rendering/device.hpp>
 
 namespace Rendering {
 

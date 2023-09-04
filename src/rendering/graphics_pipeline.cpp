@@ -1,7 +1,7 @@
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/device.hpp>
-#include <eavulkan/graphics_pipeline.hpp>
-#include <eavulkan/render_pass.hpp>
+#include <eavulkan/rendering/device.hpp>
+#include <eavulkan/rendering/graphics_pipeline.hpp>
+#include <eavulkan/rendering/render_pass.hpp>
 
 namespace Rendering {
 

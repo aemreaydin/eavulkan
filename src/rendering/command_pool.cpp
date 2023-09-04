@@ -1,7 +1,7 @@
-#include <eavulkan/command_pool.hpp>
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/device.hpp>
-#include <eavulkan/queue.hpp>
+#include <eavulkan/rendering/command_pool.hpp>
+#include <eavulkan/rendering/device.hpp>
+#include <eavulkan/rendering/queue.hpp>
 
 namespace Rendering {
 

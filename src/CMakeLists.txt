@@ -13,22 +13,23 @@ set(THIRD_PARTY_LIBS
         tinyobjloader::tinyobjloader)
 
 add_library(${CMAKE_PROJECT_NAME}
-        instance.cpp
-        physical_device.cpp
-        queue.cpp
-        device.cpp
-        render_pass.cpp
-        pipeline.cpp
-        graphics_pipeline.cpp
-        swap_chain.cpp
-        descriptor_pool.cpp
-        descriptor_set.cpp
-        descriptor_set_layout.cpp
-        command_buffer.cpp
-        command_pool.cpp
-        frame_buffer.cpp
-        buffer.cpp
-        image.cpp
+        rendering/instance.cpp
+        rendering/physical_device.cpp
+        rendering/queue.cpp
+        rendering/device.cpp
+        rendering/render_pass.cpp
+        rendering/pipeline.cpp
+        rendering/graphics_pipeline.cpp
+        rendering/swap_chain.cpp
+        rendering/descriptor_pool.cpp
+        rendering/descriptor_set.cpp
+        rendering/descriptor_set_layout.cpp
+        rendering/command_buffer.cpp
+        rendering/command_pool.cpp
+        rendering/frame_buffer.cpp
+        rendering/buffer.cpp
+        rendering/image.cpp
+        rendering/vertex.cpp
         ${HEADER_LIST}
 )
 #        VBuffer.cpp
@@ -39,7 +40,7 @@ add_library(${CMAKE_PROJECT_NAME}
 #        DescriptorSetLayout.cpp
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${THIRD_PARTY_LIBS})
 target_include_directories(${CMAKE_PROJECT_NAME}
-        PUBLIC ../include
+        PRIVATE ../include
         PRIVATE ${THIRD_PARTY_INCLUDES}
 )
 target_compile_features(${CMAKE_PROJECT_NAME} PUBLIC cxx_std_20)

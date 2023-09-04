@@ -1,5 +1,4 @@
-#ifndef EAVULKAN_COMMON_INCLUDES_HPP
-#define EAVULKAN_COMMON_INCLUDES_HPP
+#pragma once
 
 #include <SDL.h>
 #include <SDL_vulkan.h>
@@ -11,11 +10,10 @@
 #include <filesystem>
 #include <fstream>
 #include <functional>
+#include <glm/glm.hpp>
 #include <gsl/gsl>
 #include <iostream>
 #include <map>
 #include <set>
 #include <span>
 #include <vector>
-
-#endif

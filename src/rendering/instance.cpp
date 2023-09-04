@@ -1,5 +1,5 @@
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/instance.hpp>
+#include <eavulkan/rendering/instance.hpp>
 
 namespace Rendering {
 

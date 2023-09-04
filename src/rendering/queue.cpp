@@ -1,6 +1,6 @@
 #include <eavulkan/common/common.hpp>
-#include <eavulkan/physical_device.hpp>
-#include <eavulkan/queue.hpp>
+#include <eavulkan/rendering/physical_device.hpp>
+#include <eavulkan/rendering/queue.hpp>
 
 namespace Rendering {
 

@@ -1,7 +1,7 @@
 #pragma once
 
 #include <eavulkan/common/includes.hpp>
-#include <eavulkan/pipeline.hpp>
+#include <eavulkan/rendering/pipeline.hpp>
 
 namespace Rendering {
 

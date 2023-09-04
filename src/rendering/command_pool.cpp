@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/command_pool.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/queue.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 VCommandPool::VCommandPool( const Device& device, VkQueueFlagBits queue_flags ) : DeviceResource( device ) {
   const VkCommandPoolCreateInfo commandPoolCreateInfo{ VK_STRUCTURE_TYPE_COMMAND_POOL_CREATE_INFO, nullptr,
@@ -16,4 +16,4 @@ VCommandPool::VCommandPool( const Device& device, VkQueueFlagBits queue_flags ) 
 
 auto VCommandPool::Cleanup() -> void { vkDestroyCommandPool( GetDevice().GetHandle(), GetHandle(), nullptr ); }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

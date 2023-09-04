@@ -1,7 +1,7 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/instance.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 constexpr VkFlags kSeverityFlags =
   // VK_DEBUG_UTILS_MESSAGE_SEVERITY_INFO_BIT_EXT | VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT
@@ -160,4 +160,4 @@ auto Instance::enableInstanceExtension( const char* extension_name ) -> void {
 
 auto Instance::GetHandle() const -> VkInstance { return _instance; }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

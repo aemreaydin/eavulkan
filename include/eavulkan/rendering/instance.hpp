@@ -1,8 +1,8 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class Instance {
   VkInstance _instance{ nullptr };
@@ -40,4 +40,4 @@ class Instance {
   [[nodiscard]] auto GetHandle() const -> VkInstance;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

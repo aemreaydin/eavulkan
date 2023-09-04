@@ -1,6 +1,6 @@
 #include <eavulkan/rendering/vertex.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Vertex::Vertex( glm::vec3 position ) : position( position ) {}
 
@@ -35,4 +35,4 @@ auto Vertex::GetAttributeBindingDescriptions() -> std::vector<VkVertexInputAttri
   return attributeDescriptions;
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

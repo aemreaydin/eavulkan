@@ -1,8 +1,8 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 struct PhysicalDeviceProperties {
   VkPhysicalDeviceProperties physicalDeviceProperties{};
@@ -27,4 +27,4 @@ class PhysicalDevice {
   [[nodiscard]] auto GetPhysicalDeviceProperties() const -> const PhysicalDeviceProperties&;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

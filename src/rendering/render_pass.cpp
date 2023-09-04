@@ -1,8 +1,8 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/render_pass.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 RenderPass::RenderPass( const Device& device, std::vector<VkAttachmentDescription> attachment_descriptions,
                         std::vector<VkSubpassDescription> subpass_descriptions,
@@ -31,4 +31,4 @@ auto RenderPass::GetAttachmentDescriptions() const -> const std::vector<VkAttach
 
 void RenderPass::Cleanup() { vkDestroyRenderPass( GetDevice().GetHandle(), GetHandle(), nullptr ); }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

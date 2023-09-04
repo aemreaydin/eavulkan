@@ -1,8 +1,8 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/pipeline.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Pipeline::Pipeline( const Device& device, const PipelineState& state ) : DeviceResource<VkPipeline>( device ) {
   vkCheck(
@@ -156,4 +156,4 @@ auto PipelineStateBuilder::PipelineLayout( const std::vector<VkDescriptorSetLayo
   return *this;
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

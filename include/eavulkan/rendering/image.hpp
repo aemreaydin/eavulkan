@@ -1,10 +1,10 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class VImage : public DeviceResource<VkImage> {};
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

@@ -17,3 +17,4 @@ SpaceBeforeInheritanceColon: true
 SpaceBeforeRangeBasedForLoopColon: true
 SpacesBeforeTrailingComments: 2
 SpacesInParentheses: true
+SeparateDefinitionBlocks: Always

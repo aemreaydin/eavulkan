@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/frame_buffer.hpp>
 #include <eavulkan/rendering/render_pass.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Framebuffer::Framebuffer( const Device& device, const RenderPass& render_pass,
                           const std::vector<VkImageView>& attachments, VkExtent2D extent )
@@ -26,4 +26,4 @@ Framebuffer::Framebuffer( const Device& device, const RenderPass& render_pass,
 
 auto Framebuffer::Cleanup() -> void { vkDestroyFramebuffer( GetDevice().GetHandle(), GetHandle(), nullptr ); }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

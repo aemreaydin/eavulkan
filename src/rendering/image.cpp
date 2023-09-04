@@ -1,4 +1,4 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/image.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {}  // namespace Rendering
+namespace EA::Rendering {}

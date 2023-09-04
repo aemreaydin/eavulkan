@@ -1,8 +1,8 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class Device;
 template <typename VulkanObject>
@@ -29,4 +29,4 @@ class DeviceResource {
   virtual auto Cleanup() -> void{};
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

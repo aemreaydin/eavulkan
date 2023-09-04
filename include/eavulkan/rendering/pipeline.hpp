@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 struct PipelineState {
   VkPipelineVertexInputStateCreateInfo vertexInputStateCreateInfo{};
@@ -71,4 +71,4 @@ class Pipeline : public DeviceResource<VkPipeline> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

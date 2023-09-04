@@ -1,7 +1,6 @@
-#ifndef EAVULKAN_COMMON_COMMON_HPP
-#define EAVULKAN_COMMON_COMMON_HPP
+#pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
 template <class T>
 constexpr void vkCheck( T func, const char* err ) {
@@ -34,5 +33,3 @@ auto readShaderFile( const std::string& shader_path ) -> std::vector<T> {
 
   return buffer;
 }
-
-#endif

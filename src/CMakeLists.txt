@@ -30,17 +30,17 @@ add_library(${CMAKE_PROJECT_NAME}
         rendering/buffer.cpp
         rendering/image.cpp
         rendering/vertex.cpp
+        rendering/mesh.cpp
+        rendering/texture.cpp
+        shared/transform.cpp
+        shared/mvp.cpp
+        model.cpp
         ${HEADER_LIST}
 )
-#        VBuffer.cpp
-#        VImage.cpp
-#        CommandBuffer.cpp
-#        VCommandPool.cpp
-#        Framebuffer.cpp
-#        DescriptorSetLayout.cpp
+
 target_link_libraries(${CMAKE_PROJECT_NAME} PRIVATE ${THIRD_PARTY_LIBS})
 target_include_directories(${CMAKE_PROJECT_NAME}
-        PRIVATE ../include
+        PUBLIC ../include
         PRIVATE ${THIRD_PARTY_INCLUDES}
 )
 target_compile_features(${CMAKE_PROJECT_NAME} PUBLIC cxx_std_20)

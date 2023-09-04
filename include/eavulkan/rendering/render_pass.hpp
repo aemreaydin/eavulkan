@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class RenderPass : public DeviceResource<VkRenderPass> {
   std::vector<VkAttachmentDescription> _attachmentDescriptions{};
@@ -20,4 +20,4 @@ class RenderPass : public DeviceResource<VkRenderPass> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

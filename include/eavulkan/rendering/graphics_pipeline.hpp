@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/pipeline.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class RenderPass;
 class GraphicsPipeline : public Pipeline {
@@ -11,4 +11,4 @@ class GraphicsPipeline : public Pipeline {
   GraphicsPipeline( const Device& device, const RenderPass& render_pass, const PipelineState& state );
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

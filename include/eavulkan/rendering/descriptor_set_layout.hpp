@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class DescriptorPool;
 class DescriptorSetLayout : public DeviceResource<VkDescriptorSetLayout> {
@@ -14,4 +14,4 @@ class DescriptorSetLayout : public DeviceResource<VkDescriptorSetLayout> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

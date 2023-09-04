@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class DescriptorPool : public DeviceResource<VkDescriptorPool> {
   static constexpr uint32_t kMaxDescriptorSets = 1000;
@@ -17,4 +17,4 @@ class DescriptorPool : public DeviceResource<VkDescriptorPool> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

@@ -1,8 +1,8 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/physical_device.hpp>
 #include <eavulkan/rendering/queue.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Queue::Queue( const PhysicalDevice& physical_device, uint32_t queue_family_index,
               VkQueueFamilyProperties queue_family_properties )
@@ -81,4 +81,4 @@ auto Queues::GetQueue( VkQueueFlagBits queue_flag ) const -> const Queue& {
 
 auto Queues::GetQueues() -> QueueMap& { return _mapQueue; }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

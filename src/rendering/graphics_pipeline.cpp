@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/graphics_pipeline.hpp>
 #include <eavulkan/rendering/render_pass.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 GraphicsPipeline::GraphicsPipeline( const Device& device, const RenderPass& render_pass, const PipelineState& state )
   : Pipeline( device, state ) {
@@ -46,4 +46,4 @@ GraphicsPipeline::GraphicsPipeline( const Device& device, const RenderPass& rend
   }
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

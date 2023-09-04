@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/command_buffer.hpp>
 #include <eavulkan/rendering/command_pool.hpp>
 #include <eavulkan/rendering/device.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 CommandBuffer::CommandBuffer( const VCommandPool& command_pool, VkCommandBufferLevel level )
   : DeviceResource<VkCommandBuffer>( command_pool.GetDevice() ),
     _commandPool( &command_pool ),
@@ -51,4 +51,4 @@ auto CommandBuffer::EndCmd() -> VkResult {
   return vkEndCommandBuffer( GetHandle() );
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

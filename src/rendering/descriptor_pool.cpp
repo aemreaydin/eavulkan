@@ -1,8 +1,8 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/descriptor_pool.hpp>
 #include <eavulkan/rendering/device.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 DescriptorPool::DescriptorPool( const Device& device, std::vector<VkDescriptorPoolSize> pool_sizes, uint32_t max_sets )
   : DeviceResource( device ), _poolSizes( std::move( pool_sizes ) ), _maxSets( max_sets ) {
@@ -25,4 +25,4 @@ void DescriptorPool::Cleanup() {
   }
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

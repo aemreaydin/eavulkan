@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/physical_device.hpp>
 #include <eavulkan/rendering/queue.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Device::Device( const PhysicalDevice& physical_device )
   : _pPhysicalDevice( &physical_device ), _upQueues( std::make_unique<Queues>( physical_device ) ) {
@@ -102,4 +102,4 @@ auto Device::FindMemoryPropertyIndex( uint32_t memory_type_bits_requirement,
   throw std::runtime_error( "Failed to find required memory property index." );
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

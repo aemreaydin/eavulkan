@@ -1,11 +1,12 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/buffer.hpp>
 #include <eavulkan/rendering/device.hpp>
+#include <eavulkan/shared/mvp.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
-VBuffer::VBuffer( const Device& device, VkDeviceSize size, VkBufferUsageFlags flags,
-                  std::vector<uint32_t> queue_family_indices )
+Buffer::Buffer( const Device& device, VkDeviceSize size, VkBufferUsageFlags flags,
+                std::vector<uint32_t> queue_family_indices )
   : DeviceResource<VkBuffer>( device ),
     _deviceSize( size ),
     _flags( flags ),
@@ -23,7 +24,7 @@ VBuffer::VBuffer( const Device& device, VkDeviceSize size, VkBufferUsageFlags fl
            "Failed to create buffer" );
 }
 
-auto VBuffer::AllocateBufferMemory( VkMemoryPropertyFlags memory_property_flags ) -> void {
+auto Buffer::AllocateBufferMemory( VkMemoryPropertyFlags memory_property_flags ) -> void {
   vkGetBufferMemoryRequirements( GetDevice().GetHandle(), GetHandle(), &_memoryRequirements );
 
   const VkMemoryAllocateInfo allocateInfo{ VK_STRUCTURE_TYPE_MEMORY_ALLOCATE_INFO, nullptr, _memoryRequirements.size,
@@ -36,7 +37,7 @@ auto VBuffer::AllocateBufferMemory( VkMemoryPropertyFlags memory_property_flags 
            "Failed to bind buffer memory." );
 }
 
-auto VBuffer::Map( void* data ) -> void {
+auto Buffer::Map( void* data ) -> void {
   void* mappedMemory{ nullptr };
   vkCheck( vkMapMemory( GetDevice().GetHandle(), _deviceMemory, 0, _deviceSize, 0, &mappedMemory ),
            "Failed to map memory." );
@@ -44,7 +45,7 @@ auto VBuffer::Map( void* data ) -> void {
   vkUnmapMemory( GetDevice().GetHandle(), _deviceMemory );
 }
 
-auto VBuffer::Map( const VMvp& mvp ) -> void {
+auto Buffer::Map( const ModelViewProjection& mvp ) -> void {
   void* mappedMemory{ nullptr };
   vkCheck( vkMapMemory( GetDevice().GetHandle(), _deviceMemory, 0, _deviceSize, 0, &mappedMemory ),
            "Failed to map memory." );
@@ -52,9 +53,9 @@ auto VBuffer::Map( const VMvp& mvp ) -> void {
   vkUnmapMemory( GetDevice().GetHandle(), _deviceMemory );
 }
 
-auto VBuffer::Cleanup() -> void {
+auto Buffer::Cleanup() -> void {
   vkDestroyBuffer( GetDevice().GetHandle(), GetHandle(), nullptr );
   vkFreeMemory( GetDevice().GetHandle(), _deviceMemory, nullptr );
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

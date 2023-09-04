@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class RenderPass;
 class Swapchain;
@@ -17,4 +17,4 @@ class Framebuffer : public DeviceResource<VkFramebuffer> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

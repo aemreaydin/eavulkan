@@ -1,8 +1,8 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/descriptor_set_layout.hpp>
 #include <eavulkan/rendering/device.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 DescriptorSetLayout::DescriptorSetLayout( const Device& device, std::vector<VkDescriptorSetLayoutBinding> bindings )
   : DeviceResource( device ), _bindings( std::move( bindings ) ) {
@@ -20,4 +20,4 @@ auto DescriptorSetLayout::Cleanup() -> void {
   }
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

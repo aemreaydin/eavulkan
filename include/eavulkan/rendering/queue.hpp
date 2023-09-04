@@ -1,8 +1,8 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 enum class QueueType { GRAPHICS, COMPUTE, TRANSFER };
 class PhysicalDevice;
@@ -38,4 +38,4 @@ class Queues {
   [[nodiscard]] auto GetQueues() -> QueueMap&;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

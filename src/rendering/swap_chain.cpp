@@ -1,9 +1,9 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/device.hpp>
 #include <eavulkan/rendering/physical_device.hpp>
 #include <eavulkan/rendering/swap_chain.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 Swapchain::Swapchain( Device const& device, const VkSurfaceKHR& surface, VkExtent2D extent )
   : DeviceResource<VkSwapchainKHR>( device ),
@@ -124,4 +124,4 @@ auto Swapchain::useSuitableExtent( VkExtent2D extent ) const -> VkExtent2D {
 
 auto Swapchain::GetImageCount() const -> uint32_t { return _imageCount; }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

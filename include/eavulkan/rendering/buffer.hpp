@@ -1,13 +1,14 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class Device;
-struct VMvp;
-class VBuffer : public DeviceResource<VkBuffer> {
+struct ModelViewProjection;
+
+class Buffer : public DeviceResource<VkBuffer> {
   VkDeviceSize _deviceSize{};
   VkDeviceMemory _deviceMemory{};
   VkBufferUsageFlags _flags{};
@@ -15,12 +16,12 @@ class VBuffer : public DeviceResource<VkBuffer> {
   VkMemoryRequirements _memoryRequirements{};
 
  public:
-  VBuffer( const Device& device, VkDeviceSize size, VkBufferUsageFlags flags,
-           std::vector<uint32_t> queue_family_indices = {} );
+  Buffer( const Device& device, VkDeviceSize size, VkBufferUsageFlags flags,
+          std::vector<uint32_t> queue_family_indices = {} );
   auto AllocateBufferMemory( VkMemoryPropertyFlags memory_property_flags ) -> void;
   auto Map( void* data ) -> void;
-  auto Map( const VMvp& mvp ) -> void;
+  auto Map( const ModelViewProjection& mvp ) -> void;
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

@@ -1,15 +1,15 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 struct Vertex {
   glm::vec3 position{};
   glm::vec3 normal{};
   glm::vec2 texCoord{};
 
-  // Vertex() = default;
+  Vertex() = default;
   explicit Vertex( glm::vec3 position );
 
   Vertex( glm::vec3 position, glm::vec3 normal, glm::vec2 tex_coord );
@@ -19,4 +19,4 @@ struct Vertex {
   static auto GetAttributeBindingDescriptions() -> std::vector<VkVertexInputAttributeDescription>;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

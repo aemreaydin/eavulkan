@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 struct SwapchainSurfaceSupportQuery {
   VkSurfaceCapabilitiesKHR surfaceCapabilities{};
@@ -42,4 +42,4 @@ class Swapchain : public DeviceResource<VkSwapchainKHR> {
   auto Cleanup() -> void override;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

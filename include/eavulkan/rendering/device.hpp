@@ -1,8 +1,8 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class PhysicalDevice;
 class Queue;
@@ -41,4 +41,4 @@ class Device {
                                               VkMemoryPropertyFlags required_memory_flags ) const -> uint32_t;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

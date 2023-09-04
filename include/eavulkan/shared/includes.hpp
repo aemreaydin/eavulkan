@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include <SDL_vulkan.h>
 #include <spdlog/spdlog.h>
+#include <stb_image.h>
 #include <tiny_obj_loader.h>
 #include <vulkan/vulkan.h>
 

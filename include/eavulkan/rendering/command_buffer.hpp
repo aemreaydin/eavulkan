@@ -1,9 +1,9 @@
 #pragma once
 
-#include <eavulkan/common/includes.hpp>
 #include <eavulkan/rendering/resource.hpp>
+#include <eavulkan/shared/includes.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 class VCommandPool;
 class CommandBuffer : public DeviceResource<VkCommandBuffer> {
@@ -25,4 +25,4 @@ class CommandBuffer : public DeviceResource<VkCommandBuffer> {
   auto EndCmd() -> VkResult;
 };
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

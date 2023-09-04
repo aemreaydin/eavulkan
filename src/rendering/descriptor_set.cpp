@@ -1,10 +1,10 @@
-#include <eavulkan/common/common.hpp>
 #include <eavulkan/rendering/descriptor_pool.hpp>
 #include <eavulkan/rendering/descriptor_set.hpp>
 #include <eavulkan/rendering/descriptor_set_layout.hpp>
 #include <eavulkan/rendering/device.hpp>
+#include <eavulkan/shared/utils.hpp>
 
-namespace Rendering {
+namespace EA::Rendering {
 
 DescriptorSet::DescriptorSet( const DescriptorPool& descriptor_pool, const DescriptorSetLayout& layouts )
   : DeviceResource( descriptor_pool.GetDevice() ) {
@@ -31,4 +31,4 @@ DescriptorSets::DescriptorSets( const DescriptorPool& descriptor_pool,
            "Failed to allocate descriptor sets." );
 }
 
-}  // namespace Rendering
+}  // namespace EA::Rendering

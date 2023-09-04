@@ -6,6 +6,7 @@ namespace EA::Rendering {
 
 enum class QueueType { GRAPHICS, COMPUTE, TRANSFER };
 class PhysicalDevice;
+
 class Queue {
   const PhysicalDevice* _pPhysicalDevice{ nullptr };
   VkQueue _queue{ nullptr };
@@ -24,6 +25,7 @@ class Queue {
 };
 
 using QueueMap = std::map<VkQueueFlagBits, Queue>;
+
 class Queues {
   PhysicalDevice const* _pPhysicalDevice{ nullptr };
   std::map<VkQueueFlagBits, Queue> _mapQueue;

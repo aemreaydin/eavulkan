@@ -14,6 +14,7 @@ struct PhysicalDeviceProperties {
 };
 
 class Instance;
+
 class PhysicalDevice {
   VkPhysicalDevice _physicalDevice{ nullptr };
   PhysicalDeviceProperties _physicalDeviceProperties;

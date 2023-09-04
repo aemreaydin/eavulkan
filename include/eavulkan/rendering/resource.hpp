@@ -5,6 +5,7 @@
 namespace EA::Rendering {
 
 class Device;
+
 template <typename VulkanObject>
 class DeviceResource {
   VulkanObject _resource{};
@@ -12,6 +13,7 @@ class DeviceResource {
 
  public:
   explicit DeviceResource( const Device &device ) : _pDevice( &device ) {}
+
   DeviceResource( const Device &device, VulkanObject resource ) : _pDevice( &device ), _resource( resource ) {}
 
   virtual ~DeviceResource() = default;

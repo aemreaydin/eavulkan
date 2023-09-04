@@ -6,6 +6,7 @@
 namespace EA::Rendering {
 
 class DescriptorPool;
+
 class DescriptorSetLayout : public DeviceResource<VkDescriptorSetLayout> {
   std::vector<VkDescriptorSetLayoutBinding> _bindings;
 

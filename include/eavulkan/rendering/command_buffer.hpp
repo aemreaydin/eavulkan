@@ -6,6 +6,7 @@
 namespace EA::Rendering {
 
 class VCommandPool;
+
 class CommandBuffer : public DeviceResource<VkCommandBuffer> {
   enum class State { INITIAL, RECORDING, EXECUTABLE, PENDING, INVALID };
 

@@ -7,6 +7,7 @@ namespace EA::Rendering {
 class PhysicalDevice;
 class Queue;
 class Queues;
+
 class Device {
   PhysicalDevice const* _pPhysicalDevice{ nullptr };
   VkDevice _device{ nullptr };

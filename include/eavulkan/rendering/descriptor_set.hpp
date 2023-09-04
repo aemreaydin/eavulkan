@@ -7,6 +7,7 @@ namespace EA::Rendering {
 
 class DescriptorPool;
 class DescriptorSetLayout;
+
 class DescriptorSet : public DeviceResource<VkDescriptorSet> {
   const DescriptorPool* _descriptorPool{ nullptr };
 

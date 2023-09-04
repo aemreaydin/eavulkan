@@ -7,6 +7,7 @@ namespace EA::Rendering {
 
 class RenderPass;
 class Swapchain;
+
 class Framebuffer : public DeviceResource<VkFramebuffer> {
   const RenderPass* _pRenderPass{ nullptr };
 

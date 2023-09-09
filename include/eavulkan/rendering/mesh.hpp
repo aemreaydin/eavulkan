@@ -1,6 +1,5 @@
 #pragma once
 
-#include <eavulkan/rendering/device.hpp>
 #include <eavulkan/shared/includes.hpp>
 
 namespace EA::Rendering {
@@ -8,6 +7,7 @@ namespace EA::Rendering {
 struct Vertex;
 struct Texture2D;
 class Buffer;
+class Device;
 
 struct Mesh {
   struct MeshInfo {

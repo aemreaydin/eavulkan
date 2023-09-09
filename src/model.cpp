@@ -1,5 +1,3 @@
-#pragma once
-
 #include <eavulkan/model.hpp>
 #include <eavulkan/rendering/mesh.hpp>
 

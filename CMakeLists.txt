@@ -13,5 +13,6 @@ find_package(Microsoft.GSL CONFIG REQUIRED)
 find_package(glm CONFIG REQUIRED)
 find_package(tinyobjloader CONFIG REQUIRED)
 find_package(Stb REQUIRED)
+find_package(volk CONFIG REQUIRED)
 
 add_subdirectory(src)

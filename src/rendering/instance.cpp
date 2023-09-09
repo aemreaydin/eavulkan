@@ -92,6 +92,9 @@ Instance::Instance( std::vector<const char*> sdl_extension_names, VkApplicationI
   const VkInstanceCreateFlags flags = 0;
 #endif
 
+  // Load volk before creating the instance
+  volkInitialize();
+
   const VkInstanceCreateInfo instanceCreateInfo{ VK_STRUCTURE_TYPE_INSTANCE_CREATE_INFO,
                                                  pNext,
                                                  flags,
@@ -102,6 +105,8 @@ Instance::Instance( std::vector<const char*> sdl_extension_names, VkApplicationI
                                                  _enabledExtensionNames.data() };
 
   vkCheck( vkCreateInstance( &instanceCreateInfo, nullptr, &_instance ), "Failed to create instance." );
+
+  volkLoadInstance( _instance );
 
   if ( _isValidationEnabled ) {
     initDebugUtilsMessengerFunctionPointers();

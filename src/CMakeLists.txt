@@ -10,7 +10,9 @@ set(THIRD_PARTY_LIBS
         spdlog::spdlog
         Microsoft.GSL::GSL
         glm::glm
-        tinyobjloader::tinyobjloader)
+        tinyobjloader::tinyobjloader
+        volk::volk volk::volk_headers
+)
 
 add_library(${CMAKE_PROJECT_NAME}
         rendering/instance.cpp

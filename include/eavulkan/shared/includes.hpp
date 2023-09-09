@@ -5,7 +5,7 @@
 #include <spdlog/spdlog.h>
 #include <stb_image.h>
 #include <tiny_obj_loader.h>
-#include <vulkan/vulkan.h>
+#include <volk.h>
 
 #include <array>
 #include <filesystem>

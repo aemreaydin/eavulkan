@@ -1,5 +1,6 @@
 #pragma once
 
+#include <eavulkan/rendering/device.hpp>
 #include <eavulkan/shared/includes.hpp>
 
 namespace EA::Rendering {

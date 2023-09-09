@@ -5,17 +5,17 @@
 
 namespace EA::Rendering {
 
-class VCommandPool;
+class CommandPool;
 
 class CommandBuffer : public DeviceResource<VkCommandBuffer> {
   enum class State { INITIAL, RECORDING, EXECUTABLE, PENDING, INVALID };
 
-  const VCommandPool* _commandPool{ nullptr };
+  const CommandPool* _commandPool{ nullptr };
   bool _isPrimary{ false };
   State _state{ State::INVALID };
 
  public:
-  explicit CommandBuffer( const VCommandPool& command_pool, VkCommandBufferLevel level );
+  explicit CommandBuffer( const CommandPool& command_pool, VkCommandBufferLevel level );
 
   auto SetState( State state ) -> void;
 

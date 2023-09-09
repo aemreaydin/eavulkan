@@ -2,11 +2,11 @@
 
 #include <eavulkan/rendering/resource.hpp>
 #include <eavulkan/shared/includes.hpp>
+#include <eavulkan/shared/mvp.hpp>
 
 namespace EA::Rendering {
 
 class Device;
-struct ModelViewProjection;
 
 class Buffer : public DeviceResource<VkBuffer> {
   VkDeviceSize _deviceSize{};

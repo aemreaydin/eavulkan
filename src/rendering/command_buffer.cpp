@@ -4,7 +4,7 @@
 #include <eavulkan/shared/utils.hpp>
 
 namespace EA::Rendering {
-CommandBuffer::CommandBuffer( const VCommandPool& command_pool, VkCommandBufferLevel level )
+CommandBuffer::CommandBuffer( const CommandPool& command_pool, VkCommandBufferLevel level )
   : DeviceResource<VkCommandBuffer>( command_pool.GetDevice() ),
     _commandPool( &command_pool ),
     _isPrimary( level == VK_COMMAND_BUFFER_LEVEL_PRIMARY ),

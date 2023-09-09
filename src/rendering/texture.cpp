@@ -1,3 +1,6 @@
+#define STB_IMAGE_IMPLEMENTATION
+#include <stb_image.h>
+
 #include <eavulkan/rendering/texture.hpp>
 #include <eavulkan/shared/utils.hpp>
 

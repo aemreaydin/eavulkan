@@ -28,6 +28,11 @@ Swapchain::Swapchain( Device const& device, const VkSurfaceKHR& surface, VkExten
   swapchainCreateInfo.compositeAlpha = VK_COMPOSITE_ALPHA_OPAQUE_BIT_KHR;
   swapchainCreateInfo.presentMode = _presentMode;
   swapchainCreateInfo.clipped = VK_TRUE;
+  // TODO(emreaydn): Use concurrent sharing
+  swapchainCreateInfo.queueFamilyIndexCount = 0;
+  swapchainCreateInfo.pQueueFamilyIndices = nullptr;
+  // TODO(emreaydn): Use old swapchain
+  swapchainCreateInfo.oldSwapchain = nullptr;
 
   vkCheck( vkCreateSwapchainKHR( GetDevice().GetHandle(), &swapchainCreateInfo, nullptr, &GetHandle() ),
            "Failed to create swapchain" );

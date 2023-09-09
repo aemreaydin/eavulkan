@@ -5,9 +5,9 @@
 
 namespace EA::Rendering {
 
-class VCommandPool : public DeviceResource<VkCommandPool> {
+class CommandPool : public DeviceResource<VkCommandPool> {
  public:
-  VCommandPool( const Device& device, VkQueueFlagBits queue_flags );
+  CommandPool( const Device& device, VkQueueFlagBits queue_flags );
   auto Cleanup() -> void override;
 };
 
